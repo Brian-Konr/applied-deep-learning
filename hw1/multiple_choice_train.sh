@@ -8,4 +8,4 @@ python multiple_choice.py \
     --gradient_accumulation_steps=2 \
     --num_train_epochs=1 \
     --learning_rate=3e-5 \
-    --output_dir="./mc_ckpt"
+    --output_dir="./mc-ckpt"
