@@ -1,0 +1,11 @@
+python multiple_choice.py \
+    --model_name_or_path="bert-base-chinese" \
+    --train_file="./data/train.json" \
+    --validation_file="./data/valid.json" \
+    --context_file="./data/context.json" \
+    --max_seq_length=512 \
+    --per_device_train_batch_size=1 \
+    --gradient_accumulation_steps=2 \
+    --num_train_epochs=1 \
+    --learning_rate=3e-5 \
+    --output_dir="./mc_ckpt"

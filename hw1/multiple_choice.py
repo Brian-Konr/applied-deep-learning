@@ -20,6 +20,7 @@ Fine-tuning a 🤗 Transformers model on multiple choice relying on the accelera
 
 import argparse
 import json
+import pandas as pd
 import logging
 import math
 import os
@@ -55,6 +56,9 @@ from transformers import (
 from transformers.utils import PaddingStrategy, check_min_version, send_example_telemetry
 
 
+# check if cuda is available
+cuda_check = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"device: {cuda_check}")
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
 # check_min_version("4.35.0.dev0")
 
@@ -80,6 +84,9 @@ def parse_args():
     )
     parser.add_argument(
         "--train_file", type=str, default=None, help="A csv or a json file containing the training data."
+    )
+    parser.add_argument(
+        "--context_file", type=str, default=None, help="A json file containing the context data. for paragraph id mapping"
     )
     parser.add_argument(
         "--validation_file", type=str, default=None, help="A csv or a json file containing the validation data."
@@ -361,23 +368,20 @@ def main():
             data_files["validation"] = args.validation_file
         extension = args.train_file.split(".")[-1]
         raw_datasets = load_dataset(extension, data_files=data_files)
+
+        # read context file
+        if args.context_file is None:
+            raise ValueError("Context file must be provided")
+        context_df = pd.read_json(args.context_file)
+        paragraph_ref_map = {}
+        for i, row in context_df.iterrows():
+            paragraph_ref_map[i] = row[0]
     # Trim a number of training examples
     if args.debug:
         for split in raw_datasets.keys():
             raw_datasets[split] = raw_datasets[split].select(range(100))
     # See more about loading any type of standard or custom dataset (from files, python dict, pandas DataFrame, etc) at
     # https://huggingface.co/docs/datasets/loading_datasets.html.
-
-    if raw_datasets["train"] is not None:
-        column_names = raw_datasets["train"].column_names
-    else:
-        column_names = raw_datasets["validation"].column_names
-
-    # When using your own dataset or a different dataset from swag, you will probably need to change this.
-    ending_names = [f"ending{i}" for i in range(4)]
-    context_name = "sent1"
-    question_header_name = "sent2"
-    label_column_name = "label" if "label" in column_names else "labels"
 
     # Load pretrained model and tokenizer
     #
@@ -427,12 +431,17 @@ def main():
     padding = "max_length" if args.pad_to_max_length else False
 
     def preprocess_function(examples):
-        first_sentences = [[context] * 4 for context in examples[context_name]]
-        question_headers = examples[question_header_name]
-        second_sentences = [
-            [f"{header} {examples[end][i]}" for end in ending_names] for i, header in enumerate(question_headers)
-        ]
-        labels = examples[label_column_name]
+        first_sentences = [[context] * 4 for context in examples["question"]]
+        second_sentences = []
+        labels = []
+        for i, paragraphs in enumerate(examples['paragraphs']):
+            correct_paragraph = examples['relevant'][i]
+            possible_ans = []
+            for ans_idx, paragraph in enumerate(paragraphs):
+                if paragraph == correct_paragraph:
+                    labels.append(ans_idx)
+                possible_ans.append(paragraph_ref_map[paragraph])
+            second_sentences.append(possible_ans)
 
         # Flatten out
         first_sentences = list(chain(*first_sentences))
@@ -452,17 +461,11 @@ def main():
         return tokenized_inputs
 
     
-    # TODO: remove return after debugging
     with accelerator.main_process_first():
         processed_datasets = raw_datasets.map(
             preprocess_function, batched=True, remove_columns=raw_datasets["train"].column_names
         )
     
-    # show some examples of the processed data
-    for i in range(3):
-        print(f"Example {i}: {processed_datasets['train'][i]}")
-    return
-
     train_dataset = processed_datasets["train"]
     eval_dataset = processed_datasets["validation"]
 
