@@ -25,7 +25,7 @@ import math
 import os
 import random
 from pathlib import Path
-
+import pandas as pd
 import datasets
 import evaluate
 import numpy as np
@@ -55,9 +55,6 @@ from transformers import (
 from transformers.utils import check_min_version, send_example_telemetry
 from transformers.utils.versions import require_version
 
-
-# Will error if the minimal version of Transformers is not installed. Remove at your own risks.
-check_min_version("4.35.0.dev0")
 
 require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/question-answering/requirements.txt")
 
@@ -106,6 +103,9 @@ def parse_args():
     )
     parser.add_argument(
         "--train_file", type=str, default=None, help="A csv or a json file containing the training data."
+    )
+    parser.add_argument(
+        "--context_file", type=str, default=None, help="A json file containing the context data. for paragraph id mapping"
     )
     parser.add_argument(
         "--preprocessing_num_workers", type=int, default=1, help="A csv or a json file containing the training data."
@@ -416,6 +416,13 @@ def main():
             data_files["test"] = args.test_file
         extension = args.train_file.split(".")[-1]
         raw_datasets = load_dataset(extension, data_files=data_files, field="data")
+        # read context file
+        if args.context_file is None:
+            raise ValueError("Context file must be provided")
+        context_df = pd.read_json(args.context_file)
+        paragraph_ref_map = {}
+        for i, row in context_df.iterrows():
+            paragraph_ref_map[i] = row[0]
     # See more about loading any type of standard or custom dataset (from files, python dict, pandas DataFrame, etc) at
     # https://huggingface.co/docs/datasets/loading_datasets.html.
 
@@ -462,9 +469,8 @@ def main():
 
     column_names = raw_datasets["train"].column_names
 
-    question_column_name = "question" if "question" in column_names else column_names[0]
-    context_column_name = "context" if "context" in column_names else column_names[1]
-    answer_column_name = "answers" if "answers" in column_names else column_names[2]
+    question_column_name = "question" 
+    answer_column_name = "answer"
 
     # Padding side determines if we do (question|context) or (context|question).
     pad_on_right = tokenizer.padding_side == "right"
@@ -482,14 +488,17 @@ def main():
         # Some of the questions have lots of whitespace on the left, which is not useful and will make the
         # truncation of the context fail (the tokenized question will take a lots of space). So we remove that
         # left whitespace
-        examples[question_column_name] = [q.lstrip() for q in examples[question_column_name]]
+        questions = [q.lstrip() for q in examples[question_column_name]]
+        contexts = []
+        for context_id in examples["relevant"]:
+            contexts.append(paragraph_ref_map[context_id])
 
         # Tokenize our examples with truncation and maybe padding, but keep the overflows using a stride. This results
         # in one example possible giving several features when a context is long, each of those features having a
         # context that overlaps a bit the context of the previous feature.
         tokenized_examples = tokenizer(
-            examples[question_column_name if pad_on_right else context_column_name],
-            examples[context_column_name if pad_on_right else question_column_name],
+            questions if pad_on_right else contexts,
+            contexts if pad_on_right else questions,
             truncation="only_second" if pad_on_right else "only_first",
             max_length=max_seq_length,
             stride=args.doc_stride,
@@ -521,13 +530,14 @@ def main():
             sample_index = sample_mapping[i]
             answers = examples[answer_column_name][sample_index]
             # If no answers are given, set the cls_index as answer.
-            if len(answers["answer_start"]) == 0:
+            # check whether answers has start property
+            if not isinstance(answers["start"], int):
                 tokenized_examples["start_positions"].append(cls_index)
                 tokenized_examples["end_positions"].append(cls_index)
             else:
                 # Start/end character index of the answer in the text.
-                start_char = answers["answer_start"][0]
-                end_char = start_char + len(answers["text"][0])
+                start_char = answers["start"]
+                end_char = start_char + len(answers["text"])
 
                 # Start token index of the current span in the text.
                 token_start_index = 0
@@ -581,14 +591,17 @@ def main():
         # Some of the questions have lots of whitespace on the left, which is not useful and will make the
         # truncation of the context fail (the tokenized question will take a lots of space). So we remove that
         # left whitespace
-        examples[question_column_name] = [q.lstrip() for q in examples[question_column_name]]
+        questions = [q.lstrip() for q in examples[question_column_name]]
+        contexts = []
+        for context_id in examples["relevant"]:
+            contexts.append(paragraph_ref_map[context_id])
 
         # Tokenize our examples with truncation and maybe padding, but keep the overflows using a stride. This results
         # in one example possible giving several features when a context is long, each of those features having a
         # context that overlaps a bit the context of the previous feature.
         tokenized_examples = tokenizer(
-            examples[question_column_name if pad_on_right else context_column_name],
-            examples[context_column_name if pad_on_right else question_column_name],
+            questions if pad_on_right else contexts,
+            contexts if pad_on_right else questions,
             truncation="only_second" if pad_on_right else "only_first",
             max_length=max_seq_length,
             stride=args.doc_stride,
@@ -708,6 +721,7 @@ def main():
             null_score_diff_threshold=args.null_score_diff_threshold,
             output_dir=args.output_dir,
             prefix=stage,
+            paragraph_ref_map=paragraph_ref_map,
         )
         # Format the result to the format the metric expects.
         if args.version_2_with_negative:

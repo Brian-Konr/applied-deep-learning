@@ -39,6 +39,7 @@ def postprocess_qa_predictions(
     output_dir: Optional[str] = None,
     prefix: Optional[str] = None,
     log_level: Optional[int] = logging.WARNING,
+    paragraph_ref_map: Optional[dict] = None,
 ):
     """
     Post-processes the predictions of a question-answering model to convert them to answers that are substrings of the
@@ -175,7 +176,7 @@ def postprocess_qa_predictions(
             predictions.append(min_null_prediction)
 
         # Use the offsets to gather the answer text in the original context.
-        context = example["context"]
+        context = paragraph_ref_map[example["relevant"]]
         for pred in predictions:
             offsets = pred.pop("offsets")
             pred["text"] = context[offsets[0] : offsets[1]]
@@ -261,6 +262,7 @@ def postprocess_qa_predictions_with_beam_search(
     output_dir: Optional[str] = None,
     prefix: Optional[str] = None,
     log_level: Optional[int] = logging.WARNING,
+    paragraph_ref_map: Optional[dict] = None,
 ):
     """
     Post-processes the predictions of a question-answering model with beam search to convert them to answers that are substrings of the
@@ -380,7 +382,7 @@ def postprocess_qa_predictions_with_beam_search(
         predictions = sorted(prelim_predictions, key=lambda x: x["score"], reverse=True)[:n_best_size]
 
         # Use the offsets to gather the answer text in the original context.
-        context = example["context"]
+        context = paragraph_ref_map[example["relevant"]]
         for pred in predictions:
             offsets = pred.pop("offsets")
             pred["text"] = context[offsets[0] : offsets[1]]
