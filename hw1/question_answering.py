@@ -415,7 +415,7 @@ def main():
         if args.test_file is not None:
             data_files["test"] = args.test_file
         extension = args.train_file.split(".")[-1]
-        raw_datasets = load_dataset(extension, data_files=data_files, field="data")
+        raw_datasets = load_dataset(extension, data_files=data_files)
         # read context file
         if args.context_file is None:
             raise ValueError("Context file must be provided")
@@ -731,7 +731,10 @@ def main():
         else:
             formatted_predictions = [{"id": k, "prediction_text": v} for k, v in predictions.items()]
 
-        references = [{"id": ex["id"], "answers": ex[answer_column_name]} for ex in examples]
+        references = [{"id": ex["id"], "answers": {
+            'text': [ex[answer_column_name]['text']],
+            'answer_start': [ex[answer_column_name]['start']]
+        }} for ex in examples]
         return EvalPrediction(predictions=formatted_predictions, label_ids=references)
 
     metric = evaluate.load("squad_v2" if args.version_2_with_negative else "squad")
