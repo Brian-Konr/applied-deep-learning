@@ -1,5 +1,10 @@
 mc-ckpt/
 best-mc-ckpt/
+roberta-mc-ckpt/
+
 qa-ckpt/
 best-qa-ckpt/
+bertbase-qa-ckpt/
+
+
 results/
