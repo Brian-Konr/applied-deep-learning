@@ -874,10 +874,12 @@ def main():
     # update the progress_bar if load from checkpoint
     progress_bar.update(completed_steps)
 
+    loss_list = []
+    em_metric_list = []
+
     for epoch in range(starting_epoch, args.num_train_epochs):
         model.train()
-        if args.with_tracking:
-            total_loss = 0
+        total_loss = 0
         if args.resume_from_checkpoint and epoch == starting_epoch and resume_step is not None:
             # We skip the first `n` batches in the dataloader when resuming from a checkpoint
             active_dataloader = accelerator.skip_first_batches(train_dataloader, resume_step)
@@ -888,8 +890,7 @@ def main():
                 outputs = model(**batch)
                 loss = outputs.loss
                 # We keep track of the loss at each epoch
-                if args.with_tracking:
-                    total_loss += loss.detach().float()
+                total_loss += loss.detach().float()
 
                 accelerator.backward(loss)
                 optimizer.step()
@@ -911,6 +912,48 @@ def main():
             if completed_steps >= args.max_train_steps:
                 break
 
+        # store the loss
+        loss_list.append(total_loss.item() / len(train_dataloader))
+
+        # Evaluation
+        logger.info("***** Running Evaluation *****")
+        logger.info(f"  Num examples = {len(eval_dataset)}")
+        logger.info(f"  Batch size = {args.per_device_eval_batch_size}")
+
+        all_start_logits = []
+        all_end_logits = []
+
+        model.eval()
+
+        for step, batch in enumerate(eval_dataloader):
+            with torch.no_grad():
+                outputs = model(**batch)
+                start_logits = outputs.start_logits
+                end_logits = outputs.end_logits
+
+                if not args.pad_to_max_length:  # necessary to pad predictions and labels for being gathered
+                    start_logits = accelerator.pad_across_processes(start_logits, dim=1, pad_index=-100)
+                    end_logits = accelerator.pad_across_processes(end_logits, dim=1, pad_index=-100)
+
+                all_start_logits.append(accelerator.gather_for_metrics(start_logits).cpu().numpy())
+                all_end_logits.append(accelerator.gather_for_metrics(end_logits).cpu().numpy())
+
+        max_len = max([x.shape[1] for x in all_start_logits])  # Get the max_length of the tensor
+
+        # concatenate the numpy array
+        start_logits_concat = create_and_fill_np_array(all_start_logits, eval_dataset, max_len)
+        end_logits_concat = create_and_fill_np_array(all_end_logits, eval_dataset, max_len)
+
+        # delete the list of numpy arrays
+        del all_start_logits
+        del all_end_logits
+
+        outputs_numpy = (start_logits_concat, end_logits_concat)
+        prediction = post_processing_function(eval_examples, eval_dataset, outputs_numpy)
+        eval_metric = metric.compute(predictions=prediction.predictions, references=prediction.label_ids)
+        # store the em score
+        em_metric_list.append(eval_metric['exact_match'])
+        
         if args.checkpointing_steps == "epoch":
             output_dir = f"epoch_{epoch}"
             if args.output_dir is not None:
@@ -928,6 +971,14 @@ def main():
                 repo.push_to_hub(
                     commit_message=f"Training in progress epoch {epoch}", blocking=False, auto_lfs_prune=True
                 )
+
+    # store the loss and em score to json
+    data_for_plot = {
+        "loss": loss_list,
+        "em": em_metric_list
+    }
+    with open(os.path.join(args.output_dir, "loss_em.json"), "w") as f:
+        json.dump(data_for_plot, f)
 
     # Evaluation
     logger.info("***** Running Evaluation *****")
