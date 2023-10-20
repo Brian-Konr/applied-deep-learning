@@ -1,6 +1,4 @@
-# export CUDA_VISIBLE_DEVICES=1 # NVIDIA GeForce
-# export CUDA_VISIBLE_DEVICES=0 # NVIDIA RTX A5000
-export CUDA_VISIBLE_DEVICES=0 # Tesla K80 (GPU 1)
+export CUDA_VISIBLE_DEVICES=8
 
 python question_answering.py \
     --train_file="./data/train.json" \
