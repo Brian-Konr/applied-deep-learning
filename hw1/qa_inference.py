@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--test_file", type=str, default="./data/test.json", help="test file path")
 parser.add_argument("--context_file", type=str, default="./data/context.json", help="context file path")
 parser.add_argument("--mc_result_file", type=str, default="./results/mc_result.json", help="mc answer file path")
-parser.add_argument("--model_path", type=str, default="./best-qa-ckpt/", help="model path")
+parser.add_argument("--model_path", type=str, help="model path")
 parser.add_argument("--output_file", type=str, default="./results/predict.csv", help="output file path")
 
 
@@ -33,6 +33,9 @@ if args.test_file is None:
     raise ValueError("Test file must be provided")
 with open(args.test_file, "r") as f:
     test = json.load(f)
+
+if args.model_path is None:
+    raise ValueError("Model path must be provided")
 
 # merge mc_result and test
 mc_dict = {}

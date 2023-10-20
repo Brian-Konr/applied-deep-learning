@@ -11,6 +11,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--test_file", type=str, default="./data/test.json", help="test file path")
 parser.add_argument("--context_file", type=str, default="./data/context.json", help="context file path")
 parser.add_argument("--output_file", type=str, default="./results/mc_result.json", help="output file path")
+parser.add_argument("--model_path", type=str, help="model path")
 
 args = parser.parse_args()
 
@@ -26,11 +27,14 @@ if args.test_file is None:
 with open(args.test_file, "r") as f:
     test = json.load(f)
 
-tokenizer = AutoTokenizer.from_pretrained("./best-mc-ckpt/")
+if args.model_path is None:
+    raise ValueError("Model path must be provided")
+
+tokenizer = AutoTokenizer.from_pretrained(args.model_path)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"device: {device}")
-model = AutoModelForMultipleChoice.from_pretrained("./best-mc-ckpt/").to(device)
+model = AutoModelForMultipleChoice.from_pretrained(args.model_path).to(device)
 # turn on evaluation mode for inference
 model.eval()
 
