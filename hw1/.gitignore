@@ -6,5 +6,5 @@ qa-ckpt/
 best-qa-ckpt/
 bertbase-qa-ckpt/
 
-
+tmp/
 results/

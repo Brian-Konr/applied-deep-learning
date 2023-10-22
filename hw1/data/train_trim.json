@@ -1,0 +1,1562 @@
+[
+    {
+        "id": "593f14f960d971e294af884f0194b3a7",
+        "question": "舍本和誰的數據能推算出連星的恆星的質量？",
+        "paragraphs": [
+            2018,
+            6952,
+            8264,
+            836
+        ],
+        "relevant": 836,
+        "answer": {
+            "text": "斯特魯維",
+            "start": 108
+        }
+    },
+    {
+        "id": "acd5d763ec4c250f9a11eac1412d6814",
+        "question": "在關西鎮以什麼方言為主？",
+        "paragraphs": [
+            1716,
+            8318,
+            4070,
+            7571
+        ],
+        "relevant": 8318,
+        "answer": {
+            "text": "四縣腔客家話",
+            "start": 306
+        }
+    },
+    {
+        "id": "5670000714a658c5e52658e22e6985f7",
+        "question": "「有錫兵，天下爭。無錫寧，天下清。」指的是何人攻破蘭陵後，率軍駐無錫錫山時的上書?",
+        "paragraphs": [
+            6043,
+            5950,
+            2548,
+            5806
+        ],
+        "relevant": 5806,
+        "answer": {
+            "text": "王翦",
+            "start": 46
+        }
+    },
+    {
+        "id": "f71493751ccfce42aae7a99ed3f20dbb",
+        "question": "《方法論》的作者是誰?",
+        "paragraphs": [
+            5443,
+            6843,
+            8584,
+            4350
+        ],
+        "relevant": 6843,
+        "answer": {
+            "text": "阿基米德",
+            "start": 63
+        }
+    },
+    {
+        "id": "56d547357d11a8938197072d82aa126c",
+        "question": "環繞速度又為哪種速度的別稱?",
+        "paragraphs": [
+            1859,
+            7590,
+            3116,
+            8989
+        ],
+        "relevant": 7590,
+        "answer": {
+            "text": "第一宇宙速度",
+            "start": 69
+        }
+    },
+    {
+        "id": "df509863db14955352fd7c47e0dab571",
+        "question": "橫濱市內大部分地區的方言是屬於哪一種方言?",
+        "paragraphs": [
+            2114,
+            7497,
+            7205,
+            4342
+        ],
+        "relevant": 2114,
+        "answer": {
+            "text": "橫濱川崎方言",
+            "start": 194
+        }
+    },
+    {
+        "id": "9b4518c395d7137ba2bd53b435c7c20e",
+        "question": "托勒密是甚麼學家?",
+        "paragraphs": [
+            8220,
+            5048,
+            759,
+            2764
+        ],
+        "relevant": 759,
+        "answer": {
+            "text": "天文學家",
+            "start": 182
+        }
+    },
+    {
+        "id": "367072175806b2971c978e12b297e7b7",
+        "question": "乘客等了多久巴士",
+        "paragraphs": [
+            5606,
+            7551,
+            501,
+            2086
+        ],
+        "relevant": 2086,
+        "answer": {
+            "text": "四十五分鐘",
+            "start": 183
+        }
+    },
+    {
+        "id": "afec06dd09314129d6fa43ba6cbdfe67",
+        "question": "周太子誦於何年即位?",
+        "paragraphs": [
+            3883,
+            8349,
+            364,
+            5323
+        ],
+        "relevant": 364,
+        "answer": {
+            "text": "西元前1042年",
+            "start": 0
+        }
+    },
+    {
+        "id": "af82104e2c3121d4bc2f8209dd10772c",
+        "question": "夏季的季風為什麼?",
+        "paragraphs": [
+            7497,
+            2986,
+            4853,
+            6850
+        ],
+        "relevant": 4853,
+        "answer": {
+            "text": "西南季風",
+            "start": 230
+        }
+    },
+    {
+        "id": "3833abd32c5066b0a8fd50d675078fbf",
+        "question": "具有什麼特性的輻射可以把原子游離?",
+        "paragraphs": [
+            8989,
+            7118,
+            7464,
+            4990
+        ],
+        "relevant": 4990,
+        "answer": {
+            "text": "擁有足夠高能量",
+            "start": 197
+        }
+    },
+    {
+        "id": "5cedc658a73b18582eccdf0d487e7ac8",
+        "question": "麻省理工學院自1929年持續獲得哪個單位的教育認可?",
+        "paragraphs": [
+            2117,
+            1029,
+            3210,
+            74
+        ],
+        "relevant": 74,
+        "answer": {
+            "text": "新英格蘭學校與學院協會",
+            "start": 50
+        }
+    },
+    {
+        "id": "57f93eb0578ad9ae5d5e4f9918a6d30d",
+        "question": "哪一個於1961年與坦尚尼亞建交?",
+        "paragraphs": [
+            5390,
+            6789,
+            5485,
+            6056
+        ],
+        "relevant": 6789,
+        "answer": {
+            "text": "美國",
+            "start": 202
+        }
+    },
+    {
+        "id": "480c8d49733da2e819483451478ff102",
+        "question": "華納公司在哪一年時獲得第一國家電影公司的完全控制權?",
+        "paragraphs": [
+            392,
+            7021,
+            5338,
+            7497
+        ],
+        "relevant": 7021,
+        "answer": {
+            "text": "1929年",
+            "start": 415
+        }
+    },
+    {
+        "id": "6e8c3300e198a14d348e1ae503c56fba",
+        "question": "「三區革命」在哪一年爆發?",
+        "paragraphs": [
+            2146,
+            7569,
+            8741,
+            5956
+        ],
+        "relevant": 5956,
+        "answer": {
+            "text": "民國三十三年",
+            "start": 138
+        }
+    },
+    {
+        "id": "a6770ec0577fe09fffb6f629cb19857d",
+        "question": "酋長球場的舊名稱為何?",
+        "paragraphs": [
+            8585,
+            8582,
+            3439,
+            5397
+        ],
+        "relevant": 3439,
+        "answer": {
+            "text": "阿什伯頓",
+            "start": 260
+        }
+    },
+    {
+        "id": "4d3e3ea2832b3a6ddcf0dd2ffede55fa",
+        "question": "台灣棒球維基館是哪一個計劃的加值成果？",
+        "paragraphs": [
+            2146,
+            3962,
+            7778,
+            6107
+        ],
+        "relevant": 6107,
+        "answer": {
+            "text": "台灣棒球運動珍貴新聞檔案數位資料館之建置",
+            "start": 169
+        }
+    },
+    {
+        "id": "248579f48f6968674ad1117d1951260d",
+        "question": "台灣在2013年得到國際鳥盟頒發的國際保育獎的原因為？",
+        "paragraphs": [
+            2146,
+            829,
+            7186,
+            5646
+        ],
+        "relevant": 5646,
+        "answer": {
+            "text": "保育黑面琵鷺的成效",
+            "start": 217
+        }
+    },
+    {
+        "id": "367fa515034bb4ff272bd3c0d8d4f9c5",
+        "question": "哪一種鈉的製備方法會以鎳為陽極鐵為陰極來電解析出？",
+        "paragraphs": [
+            3860,
+            324,
+            1689,
+            4159
+        ],
+        "relevant": 324,
+        "answer": {
+            "text": "卡斯納法",
+            "start": 213
+        }
+    },
+    {
+        "id": "fd0d512b375ca4843e96885aa0397049",
+        "question": "《自由微中子的探測：一個證實》刊登於哪一本雜誌?",
+        "paragraphs": [
+            8678,
+            5203,
+            2509,
+            822
+        ],
+        "relevant": 5203,
+        "answer": {
+            "text": "《科學》",
+            "start": 479
+        }
+    },
+    {
+        "id": "3d1ca17b7f23d9954be0fb5cf6b1f58e",
+        "question": "為何奧運中舉辦的桌球與體操並不普及？",
+        "paragraphs": [
+            715,
+            1152,
+            8585,
+            3106
+        ],
+        "relevant": 715,
+        "answer": {
+            "text": "商業化不強",
+            "start": 129
+        }
+    },
+    {
+        "id": "eb6457e31e909d7f46ff93fe436e56b5",
+        "question": "兩所大學的天文系相關科系，成立文理科的綜合大學，一所是齊魯大學，另一所是?",
+        "paragraphs": [
+            6682,
+            8119,
+            3437,
+            5641
+        ],
+        "relevant": 3437,
+        "answer": {
+            "text": "中山大學",
+            "start": 59
+        }
+    },
+    {
+        "id": "4ab019e8c88bb8fb7ef0353c9d8a2a35",
+        "question": "托爾金在軍中的時間為什麼對艾迪絲而言是可怕的壓力?",
+        "paragraphs": [
+            7497,
+            8937,
+            8817,
+            2527
+        ],
+        "relevant": 8937,
+        "answer": {
+            "text": "她害怕每一次敲門可能帶來丈夫死去的消息",
+            "start": 290
+        }
+    },
+    {
+        "id": "5c2a00769b0b16cdc27873770a10e8f2",
+        "question": "華夏民族早期主要活動範圍在哪裡",
+        "paragraphs": [
+            5189,
+            4074,
+            7800,
+            1716
+        ],
+        "relevant": 7800,
+        "answer": {
+            "text": "焦作",
+            "start": 115
+        }
+    },
+    {
+        "id": "69eba02b1a6fa0263aebb934c41362d5",
+        "question": "部分民間藝人用花卉和禽鳥的圖案拼成的漢字為？",
+        "paragraphs": [
+            3564,
+            5017,
+            3511,
+            6811
+        ],
+        "relevant": 3564,
+        "answer": {
+            "text": "花鳥字",
+            "start": 335
+        }
+    },
+    {
+        "id": "2a3bd5af42078a674df44ad652fb4e8f",
+        "question": "最早出現在奴隸制時期的階級有「奴隸主階級」以及?",
+        "paragraphs": [
+            7017,
+            4055,
+            2469,
+            8398
+        ],
+        "relevant": 8398,
+        "answer": {
+            "text": "奴隸階級",
+            "start": 276
+        }
+    },
+    {
+        "id": "2ef1a7805c069365fbaf1d286c9f6713",
+        "question": "大約有幾成的心血管疾病是可以預防的?",
+        "paragraphs": [
+            5301,
+            6952,
+            2701,
+            65
+        ],
+        "relevant": 65,
+        "answer": {
+            "text": "九成",
+            "start": 297
+        }
+    },
+    {
+        "id": "466cd22b101e0c8fd63fc29a09d2931d",
+        "question": "胡適與張愛玲相識是於什麼時後?",
+        "paragraphs": [
+            6654,
+            2343,
+            7571,
+            6512
+        ],
+        "relevant": 2343,
+        "answer": {
+            "text": "旅美時",
+            "start": 178
+        }
+    },
+    {
+        "id": "ebd3a81d5a425a47390585219c5a2fdb",
+        "question": "底片所能感應的近紅外線波長為肉眼能看見的幾倍?",
+        "paragraphs": [
+            8912,
+            5662,
+            5043,
+            5041
+        ],
+        "relevant": 5043,
+        "answer": {
+            "text": "兩倍",
+            "start": 633
+        }
+    },
+    {
+        "id": "dd47bf4da3f0feb771a45b02f203d531",
+        "question": "於「金剛計劃」中撤離至台灣的大陳居民是自何處上岸的?",
+        "paragraphs": [
+            6925,
+            7286,
+            8504,
+            7571
+        ],
+        "relevant": 7286,
+        "answer": {
+            "text": "基隆港",
+            "start": 298
+        }
+    },
+    {
+        "id": "fc10c7f16dd0c638dcf7ff636f2ed469",
+        "question": "斯塔福德·卡爾德克特用哪一個角度分析魔戒的意義?",
+        "paragraphs": [
+            4963,
+            6952,
+            4564,
+            5662
+        ],
+        "relevant": 4564,
+        "answer": {
+            "text": "神學角度",
+            "start": 369
+        }
+    },
+    {
+        "id": "5ef6459fd0c72d74bff3cc7f1f6a93af",
+        "question": "高句麗存在的歷史超過了幾百年？",
+        "paragraphs": [
+            1213,
+            5464,
+            3953,
+            7671
+        ],
+        "relevant": 3953,
+        "answer": {
+            "text": "7",
+            "start": 115
+        }
+    },
+    {
+        "id": "0acdeccda06eae03833f5878682fce78",
+        "question": "哪個單位決定七期重劃區新市政中心的位置?",
+        "paragraphs": [
+            3687,
+            2085,
+            296,
+            1716
+        ],
+        "relevant": 296,
+        "answer": {
+            "text": "行政院",
+            "start": 107
+        }
+    },
+    {
+        "id": "6808ca114abd679665f359ced7b88098",
+        "question": "1945年5月9日德國向哪一個國家投降，結束了德蘇戰爭?",
+        "paragraphs": [
+            1639,
+            5119,
+            5754,
+            2759
+        ],
+        "relevant": 1639,
+        "answer": {
+            "text": "蘇聯",
+            "start": 69
+        }
+    },
+    {
+        "id": "fcead269af2b185768c17a36816d5b3b",
+        "question": "要花多久的時間才能抵達中環中心商業區",
+        "paragraphs": [
+            509,
+            6131,
+            958,
+            1716
+        ],
+        "relevant": 509,
+        "answer": {
+            "text": "二十四分鐘",
+            "start": 197
+        }
+    },
+    {
+        "id": "00a10a9cbf0ecc8771f94434642372c0",
+        "question": "多明尼加人移民國外的第一階段是什麼組織造成的？",
+        "paragraphs": [
+            18,
+            7423,
+            3936,
+            694
+        ],
+        "relevant": 3936,
+        "answer": {
+            "text": "美國情報局",
+            "start": 47
+        }
+    },
+    {
+        "id": "98721870ff5629dda1c1a295be9588c6",
+        "question": "英葡聯軍在哪一年攻打布爾戈斯?",
+        "paragraphs": [
+            3048,
+            5464,
+            4501,
+            1292
+        ],
+        "relevant": 4501,
+        "answer": {
+            "text": "1813年",
+            "start": 478
+        }
+    },
+    {
+        "id": "a0462bde4c442c2e1023b23a8ab07a6a",
+        "question": "西夏的末代國王是誰?",
+        "paragraphs": [
+            2818,
+            7992,
+            2342,
+            7610
+        ],
+        "relevant": 7610,
+        "answer": {
+            "text": "李睍",
+            "start": 57
+        }
+    },
+    {
+        "id": "1a49433aa703f9a86fa03bc43a1ab6a3",
+        "question": "「南至交州，經歷東甌、閩越之國，行徑萬里，不見漢地」指的是哪一地區?",
+        "paragraphs": [
+            7902,
+            7497,
+            1088,
+            6043
+        ],
+        "relevant": 1088,
+        "answer": {
+            "text": "吳越之地",
+            "start": 41
+        }
+    },
+    {
+        "id": "0708821b632917b1099bcd50c5f7b2e9",
+        "question": "《大方廣圓覺修多羅了義經》是屬於哪一個宗教的經典?",
+        "paragraphs": [
+            1098,
+            6043,
+            5922,
+            1140
+        ],
+        "relevant": 1098,
+        "answer": {
+            "text": "大乘佛教",
+            "start": 20
+        }
+    },
+    {
+        "id": "3ddcf53a3cab6b3211a3e8264e2feccf",
+        "question": "宋朝文學中什麼是說話的內容？",
+        "paragraphs": [
+            6924,
+            908,
+            6952,
+            4362
+        ],
+        "relevant": 6924,
+        "answer": {
+            "text": "話本",
+            "start": 314
+        }
+    },
+    {
+        "id": "58ffbd4744d849a7346ceb55a9ee69cd",
+        "question": "卡梅拉塔同好社於義大利的哪裡的人所組成?",
+        "paragraphs": [
+            6811,
+            130,
+            6043,
+            290
+        ],
+        "relevant": 130,
+        "answer": {
+            "text": "佛羅倫斯",
+            "start": 95
+        }
+    },
+    {
+        "id": "432864b9d1a827f4123608e92ceca2a2",
+        "question": "2004年的計畫後來演變成什麼計畫?",
+        "paragraphs": [
+            2095,
+            1206,
+            8861,
+            1358
+        ],
+        "relevant": 8861,
+        "answer": {
+            "text": "獵戶座飛船計劃",
+            "start": 1016
+        }
+    },
+    {
+        "id": "558e96aadd08cd3153bf7c5868c69c13",
+        "question": "吐蕃、南詔聯軍在什麼時候攻打唐朝失敗？",
+        "paragraphs": [
+            5676,
+            7497,
+            6647,
+            4924
+        ],
+        "relevant": 6647,
+        "answer": {
+            "text": "大曆十四年",
+            "start": 71
+        }
+    },
+    {
+        "id": "27189f6fa140abad7c278e9fe49e9c17",
+        "question": "日耳曼語族使用哪種語言",
+        "paragraphs": [
+            8317,
+            1222,
+            1146,
+            7037
+        ],
+        "relevant": 7037,
+        "answer": {
+            "text": "意第緒語",
+            "start": 0
+        }
+    },
+    {
+        "id": "5f8c65b498506d62b8651a6d16c67d37",
+        "question": "桂苑筆耕集的作者是誰？",
+        "paragraphs": [
+            1169,
+            6952,
+            6420,
+            4386
+        ],
+        "relevant": 6420,
+        "answer": {
+            "text": "崔致遠",
+            "start": 301
+        }
+    },
+    {
+        "id": "6c4b5687e95ae0e332ee4c75ace11f5f",
+        "question": "盈動在哪一年成為全港第七大上市公司?",
+        "paragraphs": [
+            4300,
+            8183,
+            8675,
+            6795
+        ],
+        "relevant": 6795,
+        "answer": {
+            "text": "1999年",
+            "start": 0
+        }
+    },
+    {
+        "id": "5a8c7681541fe2ad2b668089ad3dc025",
+        "question": "近年來為何正在大幅改動很多原有的分類?",
+        "paragraphs": [
+            3017,
+            7497,
+            4056,
+            1240
+        ],
+        "relevant": 4056,
+        "answer": {
+            "text": "分子系統學應用了生物資訊學方法分析基因組DNA",
+            "start": 175
+        }
+    },
+    {
+        "id": "78b036506bc53bf020701852573d790c",
+        "question": "在新石器時代生存在這裡的大象、犀牛、水牛已經滅絕是由於氣候如何?",
+        "paragraphs": [
+            7640,
+            2517,
+            7497,
+            5464
+        ],
+        "relevant": 7640,
+        "answer": {
+            "text": "由濕潤轉向乾旱",
+            "start": 45
+        }
+    },
+    {
+        "id": "fc6f14588342a8e988963b5867b5195f",
+        "question": "女性主義產生許多路線是由於某些國家裡面女性的法律地位、以及什麼和其他因素的影響?",
+        "paragraphs": [
+            2315,
+            2444,
+            7017,
+            8351
+        ],
+        "relevant": 8351,
+        "answer": {
+            "text": "歷史背景",
+            "start": 43
+        }
+    },
+    {
+        "id": "89d53f921a80b7786f1458f616122f43",
+        "question": "詩經中收錄的詩共有多少？",
+        "paragraphs": [
+            8264,
+            1207,
+            8409,
+            5607
+        ],
+        "relevant": 5607,
+        "answer": {
+            "text": "305首",
+            "start": 39
+        }
+    },
+    {
+        "id": "66af56a49891a55df7afe8be286af15b",
+        "question": "多明尼加的哪一地區是賞鯨聖地？",
+        "paragraphs": [
+            5755,
+            6043,
+            4083,
+            5561
+        ],
+        "relevant": 5561,
+        "answer": {
+            "text": "山美納",
+            "start": 284
+        }
+    },
+    {
+        "id": "4d0e7145c0c7ca3a5fdf64e3adb4d321",
+        "question": "哪一位歌手常被尊稱為「流行音樂之王」?",
+        "paragraphs": [
+            7571,
+            28,
+            6334,
+            6241
+        ],
+        "relevant": 6241,
+        "answer": {
+            "text": "麥可·約·傑克森",
+            "start": 0
+        }
+    },
+    {
+        "id": "f7eaf62c862bcea0125f62c2a8aab0f6",
+        "question": "抗日戰爭結束後國共雙方在何處召開政治協商會議?",
+        "paragraphs": [
+            3552,
+            5705,
+            8791,
+            3320
+        ],
+        "relevant": 3552,
+        "answer": {
+            "text": "重慶",
+            "start": 91
+        }
+    },
+    {
+        "id": "492c82db58f97c12f6c53942f247c415",
+        "question": "泰晤士河過去曾遭受嚴重汙染，在哪一年的大惡臭甚至連河邊西敏宮的下議院都不得不停止工作?",
+        "paragraphs": [
+            3586,
+            5015,
+            983,
+            5922
+        ],
+        "relevant": 983,
+        "answer": {
+            "text": "1858年",
+            "start": 114
+        }
+    },
+    {
+        "id": "eab05724b71cbe045db991635fd135ef",
+        "question": "阿爾芒·戴維德是哪國人?",
+        "paragraphs": [
+            376,
+            8264,
+            1680,
+            221
+        ],
+        "relevant": 376,
+        "answer": {
+            "text": "法國",
+            "start": 211
+        }
+    },
+    {
+        "id": "5a0c7477ece2b07f2fc18ac368a688d8",
+        "question": "「反猶太主義」這個名詞在哪一年出現?",
+        "paragraphs": [
+            4134,
+            1487,
+            4051,
+            7497
+        ],
+        "relevant": 1487,
+        "answer": {
+            "text": "1873年",
+            "start": 180
+        }
+    },
+    {
+        "id": "ca36689941a7df29171dc0b2c7c5ff45",
+        "question": "在高速公路中不足最低限速者和超速者哪邊的罰金比較低？",
+        "paragraphs": [
+            4326,
+            2355,
+            4848,
+            388
+        ],
+        "relevant": 388,
+        "answer": {
+            "text": "不足最低限速者",
+            "start": 252
+        }
+    },
+    {
+        "id": "ffd1d52c8a6ceaf0c1b92a18a28851a4",
+        "question": "鹿鳴電影工作坊最早於哪一年時被創立?",
+        "paragraphs": [
+            1321,
+            5485,
+            4566,
+            8232
+        ],
+        "relevant": 8232,
+        "answer": {
+            "text": "2008年",
+            "start": 32
+        }
+    },
+    {
+        "id": "b2f9619c2f648ce70fdbed91b0360238",
+        "question": "阿彌陀佛一詞最早出現在哪一部經典中?",
+        "paragraphs": [
+            1682,
+            7477,
+            7393,
+            1845
+        ],
+        "relevant": 1845,
+        "answer": {
+            "text": "《般舟三昧經》",
+            "start": 247
+        }
+    },
+    {
+        "id": "0d1fcb64bbf5eec9ec274f16e4fd186d",
+        "question": "哪一個洲的班次只佔全綫的三分之一",
+        "paragraphs": [
+            4058,
+            3614,
+            7497,
+            1067
+        ],
+        "relevant": 4058,
+        "answer": {
+            "text": "落馬洲",
+            "start": 269
+        }
+    },
+    {
+        "id": "cd221f28954b7996d58e03d44771301f",
+        "question": "美軍可以分為兩類其中一種叫做募兵另一種叫做什麼?",
+        "paragraphs": [
+            2527,
+            7497,
+            5825,
+            7308
+        ],
+        "relevant": 5825,
+        "answer": {
+            "text": "職業軍士",
+            "start": 214
+        }
+    },
+    {
+        "id": "5affbd9bc0c17966f003abfc83deb2cc",
+        "question": "巴西最後得到第幾名於1974年?",
+        "paragraphs": [
+            22,
+            4293,
+            4960,
+            3733
+        ],
+        "relevant": 4293,
+        "answer": {
+            "text": "第四名",
+            "start": 341
+        }
+    },
+    {
+        "id": "8fee12ce7646c888bece09edb79eafb5",
+        "question": "無錫成為江南重要經濟城市的主要原因有三，除了相對安定的社會環境、優越的自然條件，還有一項原因是?",
+        "paragraphs": [
+            8705,
+            2036,
+            5755,
+            6952
+        ],
+        "relevant": 2036,
+        "answer": {
+            "text": "便利的水陸交通",
+            "start": 194
+        }
+    },
+    {
+        "id": "e60155a3cb132e818c581451ecd493f5",
+        "question": "盧安達現行憲法將國內劃分為幾個省以確保國家政策可以在地區層面上得到執行?",
+        "paragraphs": [
+            6925,
+            709,
+            6309,
+            744
+        ],
+        "relevant": 6309,
+        "answer": {
+            "text": "五個",
+            "start": 259
+        }
+    },
+    {
+        "id": "187083a193c3e231c25c7332772ebf6c",
+        "question": "《開元釋教錄》是哪一個朝代的作品?",
+        "paragraphs": [
+            5894,
+            4350,
+            8802,
+            4141
+        ],
+        "relevant": 4141,
+        "answer": {
+            "text": "唐朝",
+            "start": 66
+        }
+    },
+    {
+        "id": "90ebff0a3b9950c18778971d707f8243",
+        "question": "費利克斯·薩伐爾是哪國人?",
+        "paragraphs": [
+            1680,
+            8264,
+            8913,
+            6952
+        ],
+        "relevant": 8913,
+        "answer": {
+            "text": "法國",
+            "start": 15
+        }
+    },
+    {
+        "id": "88fc3f0328a42e3dfc63ef069fba9fd8",
+        "question": "由於濫捕、盜獵、環境破壞、數量稀少、棲地狹窄等原因會導致物種面臨什麼的機率很高?",
+        "paragraphs": [
+            5240,
+            1926,
+            2183,
+            615
+        ],
+        "relevant": 2183,
+        "answer": {
+            "text": "絕滅",
+            "start": 59
+        }
+    },
+    {
+        "id": "8194ffe64f3698d89bec3d18cefa2545",
+        "question": "誰及他的同事得出賽德娜有甲醇冰百分之二十六？",
+        "paragraphs": [
+            6351,
+            5591,
+            6367,
+            5922
+        ],
+        "relevant": 5591,
+        "answer": {
+            "text": "巴魯希",
+            "start": 59
+        }
+    },
+    {
+        "id": "6d61a4cccb68a66f4ead51925a038f92",
+        "question": "東三環高架快速路通車後的一年又5個月哪一個也通車了？",
+        "paragraphs": [
+            6177,
+            7497,
+            5870,
+            2762
+        ],
+        "relevant": 6177,
+        "answer": {
+            "text": "北三環高架快速路",
+            "start": 219
+        }
+    },
+    {
+        "id": "a33366b1f462a395a59243e9b1baa46e",
+        "question": "後醍醐天皇的母親是誰?",
+        "paragraphs": [
+            4430,
+            6029,
+            6481,
+            6952
+        ],
+        "relevant": 4430,
+        "answer": {
+            "text": "談天門院藤原忠子",
+            "start": 81
+        }
+    },
+    {
+        "id": "774514fc2e3ef1f92681fe5cc30060ea",
+        "question": "用電台廣播呼籲胡適留下繼續擔任北京大學校長為誰?",
+        "paragraphs": [
+            4014,
+            6512,
+            5485,
+            7441
+        ],
+        "relevant": 6512,
+        "answer": {
+            "text": "中共解放軍",
+            "start": 133
+        }
+    },
+    {
+        "id": "8b31d236c621e6e30ce939297ffd3415",
+        "question": "哪一年是弦理論的起源?",
+        "paragraphs": [
+            1207,
+            5397,
+            221,
+            6583
+        ],
+        "relevant": 6583,
+        "answer": {
+            "text": "1968年",
+            "start": 78
+        }
+    },
+    {
+        "id": "ccc33819b89d04cb1900c55db9c5e90c",
+        "question": "噶爾丹策零在清朝的哪一個皇帝在位時過世?",
+        "paragraphs": [
+            8722,
+            5391,
+            8287,
+            3048
+        ],
+        "relevant": 8287,
+        "answer": {
+            "text": "乾隆",
+            "start": 5
+        }
+    },
+    {
+        "id": "66cf63203d57819e85845b9f83926abc",
+        "question": "法國人的巴拿馬運河工程於哪一年中斷?",
+        "paragraphs": [
+            7049,
+            2421,
+            3486,
+            149
+        ],
+        "relevant": 149,
+        "answer": {
+            "text": "1889年",
+            "start": 228
+        }
+    },
+    {
+        "id": "a2c91eabe12917934d0e8401970b57a0",
+        "question": "早期報章都是由哪一種人開辦的",
+        "paragraphs": [
+            5253,
+            3413,
+            6952,
+            7497
+        ],
+        "relevant": 5253,
+        "answer": {
+            "text": "西方人",
+            "start": 215
+        }
+    },
+    {
+        "id": "bb235c8458c2f323f94dcac5d609e9f0",
+        "question": "蘇門答臘島北方與馬來半島中間相隔著什麼?",
+        "paragraphs": [
+            5485,
+            7260,
+            1716,
+            2214
+        ],
+        "relevant": 7260,
+        "answer": {
+            "text": "麻六甲海峽",
+            "start": 110
+        }
+    },
+    {
+        "id": "1cc81f7fcf41d305a5fca1ef22937ce5",
+        "question": "當人出生時意識和什麼東西便共同存在著?",
+        "paragraphs": [
+            8961,
+            4613,
+            7017,
+            4618
+        ],
+        "relevant": 4618,
+        "answer": {
+            "text": "生命",
+            "start": 19
+        }
+    },
+    {
+        "id": "1c0fa075166f5f8191b8c1d81a3c2dd7",
+        "question": "哪一種國家會在奧運會的許多比賽項目中取得更多名額？",
+        "paragraphs": [
+            2318,
+            22,
+            2732,
+            7497
+        ],
+        "relevant": 22,
+        "answer": {
+            "text": "開發中國家",
+            "start": 191
+        }
+    },
+    {
+        "id": "626b0d29a2650d3d744674224b211dd0",
+        "question": "什麼可以被遊牧民族用來釀造「馬奶酒」?",
+        "paragraphs": [
+            7571,
+            157,
+            2317,
+            6925
+        ],
+        "relevant": 157,
+        "answer": {
+            "text": "馬乳",
+            "start": 229
+        }
+    },
+    {
+        "id": "71e8ddfc537e85c469e4225fcb01c8b8",
+        "question": "推翻摩揭陀的難陀王室的旃陀羅笈多又被稱為?",
+        "paragraphs": [
+            7285,
+            1207,
+            4386,
+            4852
+        ],
+        "relevant": 7285,
+        "answer": {
+            "text": "月護王",
+            "start": 215
+        }
+    },
+    {
+        "id": "f27dabb24ccf781a36155d6fdfa1d917",
+        "question": "為何梵語會被提議當作機器翻譯和自然語言處理的元語言？",
+        "paragraphs": [
+            2376,
+            744,
+            742,
+            8317
+        ],
+        "relevant": 742,
+        "answer": {
+            "text": "它有比較嚴格的結構體系",
+            "start": 225
+        }
+    },
+    {
+        "id": "a133cfb186c28bd0ff718ee690b0759c",
+        "question": "認為馬托格羅索州的境內有地球的入口是哪一派的部份人的主張？",
+        "paragraphs": [
+            8264,
+            7113,
+            6952,
+            5950
+        ],
+        "relevant": 7113,
+        "answer": {
+            "text": "地球空洞說",
+            "start": 248
+        }
+    },
+    {
+        "id": "cc79c38ddbb91d1e75a4d7d54936bd90",
+        "question": "誰認為馬克思的理念與獨裁主義差不多？",
+        "paragraphs": [
+            2709,
+            8108,
+            3624,
+            4055
+        ],
+        "relevant": 8108,
+        "answer": {
+            "text": "巴枯寧",
+            "start": 0
+        }
+    },
+    {
+        "id": "6ecfcc9d6c38607e5ffac4fc1de3851d",
+        "question": "釣魚臺的面積有多大?",
+        "paragraphs": [
+            5662,
+            8264,
+            7261,
+            8043
+        ],
+        "relevant": 7261,
+        "answer": {
+            "text": "4.3838平方公里",
+            "start": 199
+        }
+    },
+    {
+        "id": "2b77d08161e822787efaf608692b2cde",
+        "question": "哪一個人在308年時一直統治著羅馬東部的亞非部分?",
+        "paragraphs": [
+            6043,
+            5820,
+            170,
+            7439
+        ],
+        "relevant": 5820,
+        "answer": {
+            "text": "馬克西米努斯",
+            "start": 157
+        }
+    },
+    {
+        "id": "cd7881bc711e2d9c6abf0cb7d0f7ff5a",
+        "question": "海拔1700∼3700米的地區是多少比例的杜鵑的生長地區?",
+        "paragraphs": [
+            2355,
+            6198,
+            7601,
+            633
+        ],
+        "relevant": 6198,
+        "answer": {
+            "text": "70%",
+            "start": 354
+        }
+    },
+    {
+        "id": "03426a2bd3a2d2392af7303c30b2709f",
+        "question": "安圖縣內的自然地理分界線為何?",
+        "paragraphs": [
+            6525,
+            4993,
+            2791,
+            8466
+        ],
+        "relevant": 6525,
+        "answer": {
+            "text": "荒溝嶺",
+            "start": 153
+        }
+    },
+    {
+        "id": "27e63e23fc93152cefad29d4ef4ff22a",
+        "question": "由於哪個原因使得孟買成為各種社會群體和文化的大集合?",
+        "paragraphs": [
+            744,
+            712,
+            1150,
+            7017
+        ],
+        "relevant": 1150,
+        "answer": {
+            "text": "吸引了來自印度各地的移民",
+            "start": 24
+        }
+    },
+    {
+        "id": "cde5d9b65f37d14ace0e768bba526207",
+        "question": "帕科羅斯一世征服了地中海沿岸的所有據點，據點中最南端可以到達何處?",
+        "paragraphs": [
+            5755,
+            1522,
+            5950,
+            7971
+        ],
+        "relevant": 7971,
+        "answer": {
+            "text": "普托利邁伊斯",
+            "start": 429
+        }
+    },
+    {
+        "id": "c9a38c2ba5e5e163bc70f43d6d5e8801",
+        "question": "哪一種物質若在大氣中含量過高則會影響地球的氣候?",
+        "paragraphs": [
+            5225,
+            8989,
+            5335,
+            8187
+        ],
+        "relevant": 8187,
+        "answer": {
+            "text": "二氧化碳",
+            "start": 138
+        }
+    },
+    {
+        "id": "fa10b20243c602de8a65fb68df4bbdb8",
+        "question": "約翰·馬泰塞及丹尼爾·懷特公尺爾認為位在哪的天體有類似於賽德娜的公轉軌道？",
+        "paragraphs": [
+            2355,
+            8264,
+            790,
+            5217
+        ],
+        "relevant": 790,
+        "answer": {
+            "text": "7,850天文單位",
+            "start": 174
+        }
+    },
+    {
+        "id": "28d409c466e01f720084e672dad23d40",
+        "question": "新南威爾斯大學是哪一個國家境內的大學?",
+        "paragraphs": [
+            1106,
+            1836,
+            1029,
+            7137
+        ],
+        "relevant": 7137,
+        "answer": {
+            "text": "澳大利亞",
+            "start": 27
+        }
+    },
+    {
+        "id": "5802bb84b5f9725dc138e8efa2c264b3",
+        "question": "為該州最長的公路名為?",
+        "paragraphs": [
+            5154,
+            5485,
+            4567,
+            1709
+        ],
+        "relevant": 1709,
+        "answer": {
+            "text": "3號美國國道",
+            "start": 345
+        }
+    },
+    {
+        "id": "75200c45e609c5cc6fc528308552c029",
+        "question": "英國為甚麼在阿森松島建立軍營?",
+        "paragraphs": [
+            6490,
+            2467,
+            3198,
+            2322
+        ],
+        "relevant": 3198,
+        "answer": {
+            "text": "因為拿破崙被流放至聖赫倫那島的西南部",
+            "start": 23
+        }
+    },
+    {
+        "id": "4439340d9d0842b55e3bb08efd572aea",
+        "question": "土地是一切財富的根本來源，是哪個古老的認知?",
+        "paragraphs": [
+            2320,
+            4792,
+            7450,
+            5950
+        ],
+        "relevant": 4792,
+        "answer": {
+            "text": "重農主義",
+            "start": 155
+        }
+    },
+    {
+        "id": "5966deb3a3aea3f9e1c2dfc98c261085",
+        "question": "最早記載蓮花生入藏的歷史文獻是哪一本?",
+        "paragraphs": [
+            6952,
+            5464,
+            5922,
+            4697
+        ],
+        "relevant": 4697,
+        "answer": {
+            "text": "《巴協》",
+            "start": 415
+        }
+    },
+    {
+        "id": "622a5cda46bf41541eb65264df5cf3b1",
+        "question": "生態學的定義是?",
+        "paragraphs": [
+            6952,
+            2557,
+            5950,
+            7978
+        ],
+        "relevant": 7978,
+        "answer": {
+            "text": "運用相關領域的環境科學知識對生態系統進行分析",
+            "start": 6
+        }
+    },
+    {
+        "id": "e84ac365251207e0076848b6f3adb450",
+        "question": "唐朝在什麼時期與周遭國家關係較好？",
+        "paragraphs": [
+            962,
+            2801,
+            3096,
+            6382
+        ],
+        "relevant": 6382,
+        "answer": {
+            "text": "初唐",
+            "start": 25
+        }
+    },
+    {
+        "id": "83f6cf051f8e3c5e97c521c20d0789ee",
+        "question": "電磁波波速與波源速度無關的結論是誰提出的?",
+        "paragraphs": [
+            7055,
+            3844,
+            5662,
+            4963
+        ],
+        "relevant": 3844,
+        "answer": {
+            "text": "赫茲",
+            "start": 123
+        }
+    },
+    {
+        "id": "154e584a8583110a0475e3f7caa8d10b",
+        "question": "玉通常分為兩種，一種是軟玉，另一種則是?",
+        "paragraphs": [
+            6101,
+            5662,
+            5347,
+            2346
+        ],
+        "relevant": 6101,
+        "answer": {
+            "text": "硬玉",
+            "start": 14
+        }
+    },
+    {
+        "id": "9ec53ee67d1b471ff22f052d6bb0f264",
+        "question": "朱元璋自幼出身貧寒，所以對於怎麼樣的官員會有最嚴厲的懲罰?",
+        "paragraphs": [
+            7497,
+            1267,
+            6043,
+            697
+        ],
+        "relevant": 1267,
+        "answer": {
+            "text": "貪污腐敗",
+            "start": 22
+        }
+    },
+    {
+        "id": "a6c43796cb885a6b20d9e50b38bac0ff",
+        "question": "雖然決定重劃區的過程中，有民進黨表示抗議，不過最後誰還是以過半數鼓掌通過?",
+        "paragraphs": [
+            296,
+            5636,
+            4091,
+            3107
+        ],
+        "relevant": 296,
+        "answer": {
+            "text": "議長張宏年",
+            "start": 172
+        }
+    },
+    {
+        "id": "1590f74aea07d1afb4749e558bc42a08",
+        "question": "同性戀在何時之後其結婚的法律效力可以在烏拉圭獲得保障？",
+        "paragraphs": [
+            5928,
+            8609,
+            5531,
+            5950
+        ],
+        "relevant": 5531,
+        "answer": {
+            "text": "2013年4月",
+            "start": 362
+        }
+    }
+]
