@@ -38,6 +38,8 @@ from huggingface_hub import Repository, create_repo
 from torch.utils.data import DataLoader
 from tqdm.auto import tqdm
 from utils_qa import postprocess_qa_predictions
+import matplotlib.pyplot as plt
+import wandb
 
 import transformers
 from transformers import (
@@ -856,6 +858,16 @@ def main():
     logger.info(f"  Gradient Accumulation steps = {args.gradient_accumulation_steps}")
     logger.info(f"  Total optimization steps = {args.max_train_steps}")
 
+    # init wandb
+    wandb.init(
+        # set the wandb project where this run will be logged
+        project="end-to-end-qa",
+        # track hyperparameters and run metadata
+        config={
+            "learning_rate": args.learning_rate,
+        }
+    )
+
     # Only show the progress bar once on each machine.
     progress_bar = tqdm(range(args.max_train_steps), disable=not accelerator.is_local_main_process)
     completed_steps = 0
@@ -876,7 +888,6 @@ def main():
 
         accelerator.print(f"Resumed from checkpoint: {checkpoint_path}")
         accelerator.load_state(path)
-        # Extract `epoch_{i}` or `step_{i}`
         training_difference = os.path.splitext(path)[0]
 
         if "epoch" in training_difference:
@@ -894,7 +905,6 @@ def main():
     progress_bar.update(completed_steps)
 
     loss_list = []
-    em_metric_list = []
 
     for epoch in range(starting_epoch, args.num_train_epochs):
         model.train()
@@ -905,10 +915,14 @@ def main():
         else:
             active_dataloader = train_dataloader
         for step, batch in enumerate(active_dataloader):
+            if step > 10000:
+                break
             with accelerator.accumulate(model):
                 outputs = model(**batch)
                 loss = outputs.loss
-                print(f"step: {step}, loss: {loss.item()}")
+                wandb.log({"loss": loss.item()})
+                loss_list.append(loss.item())
+                
                 # We keep track of the loss at each epoch
                 total_loss += loss.detach().float()
 
@@ -932,9 +946,13 @@ def main():
             if completed_steps >= args.max_train_steps:
                 break
 
-        # store the loss
-        loss_list.append(total_loss.item() / len(train_dataloader))
-
+        
+        # draw loss curve
+        plt.plot(loss_list)
+        plt.xlabel('step')
+        plt.ylabel('loss')
+        plt.title('loss curve')
+        plt.savefig('loss_curve_e2e.png')
         if args.checkpointing_steps == "epoch":
             output_dir = f"epoch_{epoch}"
             if args.output_dir is not None:
