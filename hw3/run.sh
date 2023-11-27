@@ -1,5 +1,6 @@
-export CUDA_VISIBLE_DEVICES=8
-python ppl.py \
-    --base_model_path="./Taiwan-LLM-7B-v2.0-chat" \
-    --peft_path="./qlora-out-1/checkpoint-3000" \
-    --test_data_path="./data/public_test.json"
+python inference.py \
+    --tw_llama_model_path=$1 \
+    --peft_model_path=$2 \
+    --test_file_path=$3 \
+    --output_file_path=$4 \
+    --check_file_path="./prediction_check.json"
