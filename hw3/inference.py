@@ -1,5 +1,5 @@
 import json
-from tw_llama_helper import load_model_and_tokenizer
+from model_helper import load_tw_llama_model_and_tokenizer
 from peft import PeftModel
 from utils import get_prompt
 from transformers import GenerationConfig, pipeline
@@ -17,7 +17,7 @@ args = parser.parse_args()
 
 private_data = json.load(open(args.test_file_path, "r"))
 
-tw_llama_model, tw_llama_tokenizer = load_model_and_tokenizer(args.tw_llama_model_path)
+tw_llama_model, tw_llama_tokenizer = load_tw_llama_model_and_tokenizer(args.tw_llama_model_path)
 model = PeftModel.from_pretrained(tw_llama_model, args.peft_model_path)
 model.eval()
 

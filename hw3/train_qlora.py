@@ -1,8 +1,7 @@
 import argparse, os
 from datasets import load_dataset
 from lora_helper import create_peft_model
-from tw_llama_helper import load_model_and_tokenizer
-from peft.tuners.lora import LoraLayer
+from model_helper import load_tw_llama_model_and_tokenizer
 from utils import add_prompt, get_prompt
 from DataCollatorForCausalLM import DataCollatorForCausalLM
 from transformers import (
@@ -12,6 +11,7 @@ from transformers import (
 
 parser = argparse.ArgumentParser()
 
+parser.add_argument('use_p_tuning', type=bool, default=False)
 parser.add_argument('--lora_r', type=int, default=32)
 parser.add_argument('--lora_alpha', type=int, default=16)
 parser.add_argument('--lora_dropout', type=float, default=0.05)
@@ -21,6 +21,7 @@ parser.add_argument('--num_train_epochs', type=int, default=4)
 parser.add_argument('--gradient_accumulation_steps', type=int, default=4)
 parser.add_argument('--per_device_train_batch_size', type=int, default=2)
 parser.add_argument('--learning_rate', type=float, default=2e-4)
+parser.add_argument('--model_name_or_path', type=str, default="./Taiwan-LLM-7B-v2.0-chat")
 
 args = parser.parse_args()
 
@@ -36,11 +37,12 @@ with open(f"{args.lora_output_dir}/args.txt", "w") as f:
     f.write(f"prompt: {prompt}\n")
 
 # load base model
-tw_llama_model, tw_llama_tokenizer = load_model_and_tokenizer("./Taiwan-LLM-7B-v2.0-chat")
+base_model, base_tokenizer = load_tw_llama_model_and_tokenizer(args.model_name_or_path)
 
 # construct peft model
 peft_model = create_peft_model(
-    tw_llama_model, 
+    base_model, 
+    use_p_tuning=args.use_p_tuning,
     lora_r=args.lora_r, 
     lora_alpha=args.lora_alpha, 
     lora_dropout=args.lora_dropout,
@@ -52,7 +54,7 @@ dataset = load_dataset("json", data_files=args.train_file)['train']
 dataset = dataset.map(add_prompt)
 
 data_collator = DataCollatorForCausalLM(
-    tokenizer=tw_llama_tokenizer,
+    tokenizer=base_tokenizer,
     source_max_len=280, 
     target_max_len=512,
     train_on_source=False,

@@ -8,8 +8,18 @@
 ## Training QLora
 The main training script is `train_qlora.py`. You can run the script with the following command:
 ```bash
-sh train_qlora.sh
+python train_qlora.py \
+    --lora_r=4 \
+    --lora_alpha=16 \
+    --lora_dropout=0.1 \
+    --num_train_epochs=1 \
+    --per_device_train_batch_size=2 \
+    --gradient_accumulation_steps=8 \
+    --train_file="./data/train.json" \
+    --lora_output_dir="./qlora-out" \
+    --model_name_or_path="./Taiwan-LLM-7B-v2.0-chat"
 ```
+I also provided a different way to train the model, which is to use p-tuning. You can run the p-tuning version by adding `--use_p_tuning=True` to the above command.
 
 In this script, you can find several important components:
 

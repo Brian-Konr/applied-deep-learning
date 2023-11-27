@@ -6,6 +6,9 @@ from peft import (
     LoraConfig,
     TaskType,
     prepare_model_for_kbit_training,
+    PromptTuningConfig,
+    PromptTuningInit,
+    PromptEncoderConfig
 )
 from peft.tuners.lora import LoraLayer
 
@@ -44,7 +47,7 @@ def find_all_linear_names(model):
         lora_module_names.remove("lm_head")
     return list(lora_module_names)
 
-def create_peft_model(model, gradient_checkpointing=True, bf16=True, lora_r: int=32, lora_alpha: int=16, lora_dropout: float=0.05):
+def create_peft_model(model, use_p_tuning=False, gradient_checkpointing=True, bf16=True, lora_r: int=4, lora_alpha: int=16, lora_dropout: float=0.05):
 
     # prepare int-4 model for training
     model = prepare_model_for_kbit_training(
@@ -56,15 +59,21 @@ def create_peft_model(model, gradient_checkpointing=True, bf16=True, lora_r: int
     # get lora target modules
     modules = find_all_linear_names(model)
     print(f"Found {len(modules)} modules to quantize: {modules}")
-
-    peft_config = LoraConfig(
-        r=lora_r,
-        lora_alpha=lora_alpha,
-        lora_dropout=lora_dropout,
-        target_modules=modules,
-        bias="none",
-        task_type=TaskType.CAUSAL_LM,
-    )
+    if not use_p_tuning:
+        peft_config = LoraConfig(
+            r=lora_r,
+            lora_alpha=lora_alpha,
+            lora_dropout=lora_dropout,
+            target_modules=modules,
+            bias="none",
+            task_type=TaskType.CAUSAL_LM,
+        )
+    else:
+        peft_config = PromptEncoderConfig(
+            task_type=TaskType.CAUSAL_LM, 
+            num_virtual_tokens=20, 
+            encoder_hidden_size=128
+        )
 
     model = get_peft_model(model, peft_config)
 
